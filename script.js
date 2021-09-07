@@ -12,6 +12,18 @@ let studentObj = {
   house: "",
 };
 
-loadJson() {
+loadJson();
 
+function loadJson() {
+  fetch("https://petlatkea.dk/2021/hogwarts/students.json")
+    .then((res) => res.json())
+    .then(gotData);
+}
+
+function gotData(data) {
+  data.forEach(showStudent);
+}
+
+function showStudent(student) {
+  console.log(student);
 }
